@@ -49,7 +49,7 @@
       "isi": "Pengumuman lelayu, perlengkapan pemulasaraan jenazah, dan sholat jenazah."
     }
   ],
-  "kajianCatatan": "Contoh, ganti dengan jadwal asli",
+  "kajianCatatan": "",
   "kajian": [
     {
       "hari": "Ahad",
@@ -76,7 +76,7 @@
       "isi": "Fiqih keluarga dan tanya jawab, di serambi masjid."
     }
   ],
-  "beritaCatatan": "Contoh berita",
+  "beritaCatatan": "",
   "berita": [
     {
       "kategori": "Kegiatan",
@@ -109,7 +109,7 @@
       "isi": ""
     }
   ],
-  "mimbarCatatan": "Contoh, isi dengan tema dan khatib asli",
+  "mimbarCatatan": "",
   "mimbar": [
     {
       "tanggal": "Jumat, 16 Oktober 2026",
