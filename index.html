@@ -1,3 +1,12 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" type="image/png" href="ikon.png">
+<meta property="og:title" content="Masjid Darussalam Manisrejo">
+<meta property="og:description" content="Waktu sholat, kajian, kabar kegiatan, layanan jamaah, dan infaq Masjid Darussalam, Kampung Manisrejo, Maguwoharjo.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Masjid Darussalam Manisrejo</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Website Masjid Darussalam Manisrejo, Kalurahan Maguwoharjo: waktu sholat, layanan jamaah, kajian, kabar kegiatan, dan infaq.">
@@ -250,6 +259,8 @@ body.editing .ed{display:inline-flex}
 .ed-row{margin-top:14px}
 </style>
 
+</head>
+<body>
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="#beranda" aria-label="Masjid Darussalam, ke beranda">
@@ -279,7 +290,6 @@ body.editing .ed{display:inline-flex}
     </nav>
   </div>
 </header>
-<div class="edit-hint" id="editHint" hidden>Mode edit: klik tulisan bergaris putus-putus untuk mengubahnya, lalu tekan <b>Simpan</b>.</div>
 
 <main id="isi">
 <section class="hero" id="beranda">
@@ -350,7 +360,7 @@ body.editing .ed{display:inline-flex}
       <p class="lead">Ajukan lewat formulir di bagian Kontak atau langsung ke pengurus DKM selepas sholat berjamaah.</p>
     </div>
     <div class="svc" id="svc"></div>
-    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="layanan">+ Tambah layanan</button></div>
+    
   </div>
 </section>
 
@@ -361,7 +371,7 @@ body.editing .ed{display:inline-flex}
       <span class="chip" data-k="kajianCatatan"></span>
     </div>
     <div class="kajian" id="kajianList"></div>
-    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="kajian">+ Tambah kajian</button></div>
+    
   </div>
 </section>
 
@@ -372,7 +382,7 @@ body.editing .ed{display:inline-flex}
       <span class="chip" data-k="beritaCatatan"></span>
     </div>
     <div class="news" id="news"></div>
-    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="berita">+ Tambah berita</button></div>
+    
   </div>
 </section>
 
@@ -383,7 +393,7 @@ body.editing .ed{display:inline-flex}
       <span class="chip" data-k="mimbarCatatan"></span>
     </div>
     <div class="mimbar" id="mimbarList"></div>
-    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="mimbar">+ Tambah khutbah</button></div>
+    
   </div>
 </section>
 
@@ -395,12 +405,12 @@ body.editing .ed{display:inline-flex}
       <p data-k="tentang.p1"></p>
       <p data-k="tentang.p2"></p>
       <div class="pengurus" id="pengurus"></div>
-      <div class="ed"><button type="button" class="ed-btn" data-add="pengurus">+ Tambah pengurus</button></div>
+      
     </div>
     <div class="vm">
       <div class="box"><h3>Visi</h3><p data-k="tentang.visi"></p></div>
       <div class="box"><h3>Misi</h3><ul id="misi"></ul>
-        <div class="ed ed-row"><button type="button" class="ed-btn" data-add="tentang.misi">+ Tambah misi</button></div></div>
+        </div>
     </div>
   </div>
 </section>
@@ -420,11 +430,7 @@ body.editing .ed{display:inline-flex}
     </div>
     <div class="qris-wrap">
       <div class="qris" id="qris">QRIS DKM belum dipasang</div>
-      <div class="ed" style="flex-wrap:wrap;gap:8px;justify-content:center">
-        <label class="ed-btn" for="qrisFile" style="flex-direction:row">Unggah gambar QRIS</label>
-        <input type="file" id="qrisFile" accept="image/*" hidden>
-        <button type="button" class="ed-btn ed-del" id="qrisDel">Hapus QRIS</button>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -476,11 +482,6 @@ body.editing .ed{display:inline-flex}
   </div>
 </footer>
 
-<div class="edit-bar" id="editBar" hidden>
-  <button type="button" id="btnBatal" hidden>Batal</button>
-  <button type="button" id="btnSimpan" class="primary" hidden>Simpan</button>
-  <button type="button" id="btnEdit" class="primary">Edit halaman</button>
-</div>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script type="application/json" id="isiAwal">{
@@ -670,7 +671,7 @@ body.editing .ed{display:inline-flex}
   function set(o,p,v){var ks=p.split('.'),l=ks.pop(),t=ks.reduce(function(a,k){return a[k]},o);t[l]=v}
   function f(p,tag,cls){return '<'+tag+(cls?' class="'+cls+'"':'')+' data-k="'+p+'">'+esc(get(S,p))+'</'+tag+'>'}
   function waNum(){var n=String(get(S,'kontak.wa')||'').replace(/\D/g,'');if(n.charAt(0)==='0')n='62'+n.slice(1);return n.length>=9?n:''}
-  function del(list,i){return '<button type="button" class="ed ed-btn ed-del" data-del="'+list+'" data-i="'+i+'">Hapus</button>'}
+  function del(list,i){return ''}
 
   var ICONS=[
     '<path d="M5 21V10l7-5 7 5v11"/><path d="M10 21v-5h4v5"/><path d="M3 21h18"/>',
@@ -716,7 +717,6 @@ body.editing .ed{display:inline-flex}
     var sel=document.getElementById('fSubjek'),cur=sel.value;
     sel.innerHTML=S.layanan.map(function(x){return '<option>'+esc(x.judul)+'</option>'}).join('')+'<option>Saran & masukan</option><option>Lainnya</option>';
     if(cur)sel.value=cur;
-    if(editing)setEditable(true);
   }
 
   // Menu
@@ -784,68 +784,11 @@ body.editing .ed{display:inline-flex}
     try{navigator.clipboard.writeText(txt).then(function(){msg.textContent='Pesan tersalin. Tempelkan di WhatsApp sekretariat DKM.'},function(){msg.textContent=txt})}catch(err){msg.textContent=txt}
   });
 
-  // ---------- Edit mode ----------
-  var bar=document.getElementById('editBar'),bEdit=document.getElementById('btnEdit'),bSave=document.getElementById('btnSimpan'),bCancel=document.getElementById('btnBatal'),
-      hint=document.getElementById('editHint'),toastEl=document.getElementById('toast'),snapshot=null,art=null,assets=null,tt;
-  function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(function(){toastEl.hidden=true},3500)}
-  function setEditable(on){
-    document.querySelectorAll('[data-k]').forEach(function(el){
-      if(on){try{el.contentEditable='plaintext-only'}catch(e){el.contentEditable='true'}if(el.contentEditable!=='plaintext-only')el.contentEditable='true';el.spellcheck=false}
-      else el.removeAttribute('contenteditable')})}
-  function collect(){document.querySelectorAll('[data-k]').forEach(function(el){set(S,el.dataset.k,el.innerText.replace(/\s+\n/g,'\n').trim())})}
-  function mode(on){
-    editing=on;document.body.classList.toggle('editing',on);hint.hidden=!on;
-    bEdit.hidden=on;bSave.hidden=!on;bCancel.hidden=!on;setEditable(on)}
-  bEdit.addEventListener('click',function(){snapshot=JSON.stringify(S);mode(true)});
-  bCancel.addEventListener('click',function(){S=JSON.parse(snapshot);mode(false);render()});
-  document.addEventListener('click',function(e){
-    if(!editing)return;
-    var a=e.target.closest('a[href]');if(a&&a.closest('#isi,footer,header .brand'))e.preventDefault();
-    var d=e.target.closest('[data-del]');
-    if(d){collect();get(S,d.dataset.del).splice(+d.dataset.i,1);render();return}
-    var ad=e.target.closest('[data-add]');
-    if(ad){collect();var list=get(S,ad.dataset.add),tpl={
-      layanan:{judul:'Layanan baru',isi:'Keterangan layanan.'},
-      kajian:{hari:'Hari',waktu:'Waktu',judul:'Judul kajian',isi:'Keterangan.'},
-      berita:{kategori:'Kegiatan',tanggal:'Tanggal',judul:'Judul berita',isi:''},
-      mimbar:{tanggal:'Jumat, tanggal',judul:'Tema khutbah',khatib:'[nama khatib]'},
-      pengurus:{jabatan:'Jabatan',nama:'[nama]'}}[ad.dataset.add];
-      if(ad.dataset.add==='berita')list.unshift(tpl);else list.push(tpl===undefined?'Misi baru.':tpl);
-      render()}
-  });
-  document.addEventListener('keydown',function(e){if(editing&&e.key==='Enter'&&e.target.matches&&e.target.matches('[data-k]')&&!e.target.matches('p'))e.preventDefault()});
-  bSave.addEventListener('click',function(){
-    if(!art){toast('Penyimpanan tidak tersedia di tampilan ini.');return}
-    collect();bSave.disabled=true;bSave.textContent='Menyimpan…';
-    art.publish({'isi.json':{content:JSON.stringify(S,null,2),contentType:'application/json'}}).then(function(){
-      mode(false);render();toast('Tersimpan. Perubahan sudah tampil untuk semua pengunjung.')
-    },function(err){
-      var c=err&&err.code;
-      if(c==='conflict')toast('Ada perubahan lain yang baru disimpan. Halaman dimuat ulang.');
-      else if(c==='not_writer'||c==='not_granted'||c==='capability_disabled'||c==='consent_required'){toast('Akun ini hanya bisa melihat, tidak bisa menyimpan.');bar.hidden=true;mode(false)}
-      else if(c==='rate_limited')toast('Terlalu sering menyimpan. Tunggu sebentar lalu coba lagi.');
-      else toast('Gagal menyimpan. Periksa koneksi lalu tekan Simpan lagi.');
-    }).then(function(){bSave.disabled=false;bSave.textContent='Simpan'});
-  });
-  document.getElementById('qrisFile').addEventListener('change',function(e){
-    var file=e.target.files&&e.target.files[0];if(!file)return;
-    if(!assets){toast('Unggah gambar tidak tersedia di tampilan ini.');return}
-    collect();toast('Mengunggah QRIS…');
-    assets.upload(file).then(function(r){S.infaq.qris=r.url;render();toast('QRIS terpasang. Tekan Simpan agar tersimpan.')},
-      function(){toast('Gagal mengunggah. Gunakan gambar JPG atau PNG di bawah 20 MB.')});
-    e.target.value='';
-  });
-  document.getElementById('qrisDel').addEventListener('click',function(){collect();S.infaq.qris='';render()});
-
   // Boot
   render();tick();week();setInterval(tick,1000);
   fetch('isi.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
     if(j&&!editing){S=j;render()}}).catch(function(){});
-  if(window.claude&&window.claude.use){
-    Promise.all([window.claude.use('artifact'),window.claude.use('user'),window.claude.use('assets')]).then(function(r){
-      art=r[0];assets=r[2];var u=r[1];
-      if(art&&u&&u.canEdit&&u.canEdit())bar.hidden=false;
-    }).catch(function(){});
-  }
 })();
 </script>
+</body>
+</html>
