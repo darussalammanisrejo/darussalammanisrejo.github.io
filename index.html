@@ -1,0 +1,851 @@
+<title>Masjid Darussalam Manisrejo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Website Masjid Darussalam Manisrejo, Kalurahan Maguwoharjo: waktu sholat, layanan jamaah, kajian, kabar kegiatan, dan infaq.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@700&family=Jost:wght@400;500;600&family=Marcellus&display=swap">
+<style>
+/* Layout: portal masjid ala Istiqlal. Langit-langit terang dengan motif kawung samar, logo Tajug Siluet di hero, pita waktu sholat, lalu layanan, kajian, kabar, mimbar, profil, infaq, kontak. Warna dari logo: sogan + kunyit, ditenangkan hijau daun. */
+:root{
+  --bg:#f6f1e7;
+  --surface:#fffdf8;
+  --ink:#33261b;
+  --muted:#76685a;
+  --line:#e7ddcc;
+  --sogan:#5b3a24;
+  --sogan-2:#6e4a30;
+  --kunyit:#c8892e;
+  --kunyit-soft:#f4e5c6;
+  --daun:#5f7d5c;
+  --daun-soft:#e5ece0;
+  --on-sogan:#fbf3e6;
+  --logo-u:#5b3a24;
+  --logo-a:#c8892e;
+  --logo-bg:#f6f1e7;
+  --pattern:rgba(91,58,36,.06);
+  --f-display:"Marcellus","Cormorant Garamond",Georgia,serif;
+  --f-body:"Jost","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-khat:"Aref Ruqaa","Amiri","Traditional Arabic",serif;
+  --f-arab:"Amiri","Traditional Arabic",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1c1611;--surface:#261e17;--ink:#efe6d8;--muted:#b9aa95;--line:#3b2f24;
+  --sogan:#e4c29e;--sogan-2:#4a3121;--kunyit:#dfa24c;--kunyit-soft:#3f3018;--daun:#9fbb98;--daun-soft:#232c20;
+  --on-sogan:#fbf3e6;--logo-u:#e9cfae;--logo-a:#dfa24c;--logo-bg:#1c1611;--pattern:rgba(233,207,174,.05);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1c1611;--surface:#261e17;--ink:#efe6d8;--muted:#b9aa95;--line:#3b2f24;
+  --sogan:#e4c29e;--sogan-2:#4a3121;--kunyit:#dfa24c;--kunyit-soft:#3f3018;--daun:#9fbb98;--daun-soft:#232c20;
+  --on-sogan:#fbf3e6;--logo-u:#e9cfae;--logo-a:#dfa24c;--logo-bg:#1c1611;--pattern:rgba(233,207,174,.05);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--kunyit);outline-offset:2px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;line-height:1.2;margin:0}
+h2{font-size:clamp(1.75rem,3.2vw,2.4rem);color:var(--sogan)}
+h3{font-size:1.22rem}
+p{margin:0}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--daun)}
+.sec{padding-block:76px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 24px;margin-bottom:32px}
+.sec-head .lead{color:var(--muted);max-width:56ch;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:500 .95rem var(--f-body);padding:12px 22px;border-radius:999px;border:1px solid transparent;text-decoration:none;cursor:pointer;min-height:44px}
+.btn-kunyit{background:var(--kunyit);color:#2e1c0a}
+.btn-kunyit:hover{filter:brightness(1.06)}
+.btn-line{border-color:var(--sogan);color:var(--sogan);background:transparent}
+.btn-line:hover{background:var(--kunyit-soft)}
+.chip{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--kunyit-soft);color:var(--sogan)}
+.chip:empty{display:none}
+.ornamen{display:flex;align-items:center;gap:10px;color:var(--kunyit)}
+.ornamen::before,.ornamen::after{content:"";height:1px;width:40px;background:currentColor;opacity:.6}
+
+/* Header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand svg{flex:none;width:48px;height:40px}
+.brand b{display:block;font-family:var(--f-display);font-weight:400;font-size:1.18rem;line-height:1.1;color:var(--sogan)}
+.brand small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.06em}
+nav.main{display:flex;align-items:center;gap:2px}
+nav.main a{font-size:.92rem;text-decoration:none;padding:8px 10px;border-radius:8px;color:var(--ink)}
+nav.main a:hover{background:var(--kunyit-soft)}
+nav.main a.btn{margin-left:8px;padding:9px 18px}
+#menuBtn{display:none;background:none;border:1px solid var(--line);color:var(--sogan);border-radius:10px;padding:8px 14px;font:500 .9rem var(--f-body);cursor:pointer;min-height:44px}
+@media (max-width:940px){
+  #menuBtn{display:inline-flex;align-items:center}
+  nav.main{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--surface);padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(0,0,0,.06)}
+  nav.main:not(.open){display:none}
+  nav.main a{padding:12px 8px}
+  nav.main a.btn{margin:8px 0 0}
+}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 0 0,var(--pattern) 0 22px,transparent 23px) 0 0/64px 64px,
+  radial-gradient(circle at 100% 0,var(--pattern) 0 22px,transparent 23px) 0 0/64px 64px,
+  radial-gradient(circle at 0 100%,var(--pattern) 0 22px,transparent 23px) 0 0/64px 64px,
+  radial-gradient(circle at 100% 100%,var(--pattern) 0 22px,transparent 23px) 0 0/64px 64px,
+  linear-gradient(180deg,var(--surface),var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:56px 92px}
+.hero .salam{font-family:var(--f-arab);font-size:1.25rem;color:var(--daun);direction:rtl;text-align:left;margin-bottom:10px}
+.hero h1{font-size:clamp(2.4rem,5.2vw,3.9rem);color:var(--sogan)}
+.hero h1 .tag{display:block;font-family:var(--f-body);font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--kunyit);font-weight:500;margin-top:12px;letter-spacing:.01em}
+.hero .intro{max-width:52ch;color:var(--muted);margin-top:18px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-logo{min-width:0;display:flex;justify-content:center}
+.hero-logo .disc{width:min(100%,400px);aspect-ratio:1;max-width:100%;border-radius:50%;background:var(--logo-bg);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(91,58,36,.35),0 0 0 12px color-mix(in srgb,var(--kunyit) 10%,transparent);display:grid;place-items:center}
+.hero-logo svg{width:92%;height:auto}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 80px}.hero-logo{order:-1}.hero-logo .disc{width:min(72%,280px)}}
+
+/* Facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-44px;position:relative;z-index:2;box-shadow:0 18px 40px -28px rgba(91,58,36,.4)}
+.facts div{background:var(--surface);padding:20px 22px;min-width:0}
+.facts b{display:block;font-family:var(--f-display);font-weight:400;font-size:1.5rem;color:var(--sogan)}
+.facts span{font-size:.88rem;color:var(--muted)}
+@media (max-width:720px){.facts{grid-template-columns:repeat(2,1fr)}}
+
+/* Prayer */
+.prayer{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px;align-items:stretch}
+.next{background:var(--sogan-2);color:var(--on-sogan);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:8px;justify-content:center;position:relative;overflow:hidden}
+.next::after{content:"";position:absolute;right:-40px;bottom:-40px;width:180px;height:180px;border-radius:50%;border:24px solid rgba(200,137,46,.18)}
+.next .label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.next .name{font-family:var(--f-display);font-size:2.2rem;color:#e9b765;line-height:1.05}
+.next .count{font-size:2.6rem;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.next .date{font-size:.92rem;opacity:.85}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.times div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.times div.now{background:var(--daun-soft);border-color:var(--daun)}
+.times span{display:block;font-size:.85rem;color:var(--muted)}
+.times b{font-size:1.6rem;font-weight:500;font-variant-numeric:tabular-nums;color:var(--ink)}
+.note{font-size:.84rem;color:var(--muted);margin-top:14px;max-width:80ch}
+@media (max-width:820px){.prayer{grid-template-columns:1fr}}
+@media (max-width:420px){.times{grid-template-columns:repeat(2,1fr)}}
+details.week{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+details.week summary{cursor:pointer;padding:14px 18px;font-weight:500;color:var(--sogan)}
+.tbl{overflow-x:auto;padding:0 18px 18px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.92rem}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* Services */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc article{padding:24px;background:var(--bg);border-radius:16px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--line)}
+.svc .ic{width:48px;height:48px;border-radius:14px;background:var(--daun-soft);color:var(--daun);display:grid;place-items:center}
+.svc .ic svg{width:26px;height:26px}
+.svc article p{color:var(--muted);font-size:.96rem;flex:1}
+.svc article a.go{font-weight:500;font-size:.92rem;color:var(--sogan);text-decoration:none}
+.svc article a.go:hover{text-decoration:underline}
+@media (max-width:860px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:540px){.svc{grid-template-columns:1fr}}
+
+/* Kajian */
+.kajian{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.kj{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.kj .day{text-align:center;border-right:1px solid var(--line);padding-right:12px;display:flex;flex-direction:column;justify-content:center}
+.kj .day b{display:block;font-family:var(--f-display);font-weight:400;font-size:1.25rem;color:var(--sogan);line-height:1.2}
+.kj .day span{font-size:.82rem;color:var(--daun)}
+.kj h3{font-size:1.12rem}
+.kj p{color:var(--muted);font-size:.92rem;margin-top:4px}
+@media (max-width:720px){.kajian{grid-template-columns:1fr}}
+
+/* News */
+.news{display:grid;grid-template-columns:1.25fr 1fr;gap:28px}
+.feat{background:var(--bg);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{aspect-ratio:16/8;max-width:100%;background:
+  radial-gradient(circle at 0 0,rgba(200,137,46,.16) 0 22px,transparent 23px) 0 0/64px 64px,
+  radial-gradient(circle at 100% 100%,rgba(200,137,46,.16) 0 22px,transparent 23px) 0 0/64px 64px,var(--sogan-2);display:grid;place-items:center}
+.thumb svg{width:34%;height:auto}
+.feat .body{padding:22px;display:flex;flex-direction:column;gap:8px}
+.feat h3{font-size:1.5rem;color:var(--sogan)}
+.feat p{color:var(--muted)}
+.meta{font-size:.82rem;color:var(--daun);font-weight:500}
+.list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.list .it{padding:16px 0;border-bottom:1px solid var(--line)}
+.list h3{font-size:1.08rem;font-family:var(--f-body);font-weight:500;margin-top:2px}
+@media (max-width:820px){.news{grid-template-columns:1fr}}
+
+/* Mimbar */
+.mimbar{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mb{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.mb .tgl{font-size:.82rem;color:var(--kunyit);font-weight:600}
+.mb h3{font-size:1.1rem;flex:1}
+.mb .khatib{font-size:.88rem;color:var(--muted)}
+@media (max-width:900px){.mimbar{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.mimbar{grid-template-columns:1fr}}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.about .txt{display:flex;flex-direction:column;gap:14px;max-width:62ch}
+.about .txt p{color:var(--muted)}
+.vm{display:flex;flex-direction:column;gap:16px}
+.vm .box{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px}
+.vm h3{color:var(--sogan)}
+.vm .box > p{color:var(--muted);margin-top:8px}
+.vm ul{margin:8px 0 0;padding-left:20px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.vm li::marker{color:var(--kunyit)}
+.pengurus{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.pengurus .p{border-left:2px solid var(--kunyit);padding-left:12px;min-width:0}
+.pengurus span{display:block;font-size:.8rem;color:var(--muted)}
+.pengurus b{font-weight:500;font-size:1rem}
+@media (max-width:820px){.about{grid-template-columns:1fr}.pengurus{grid-template-columns:repeat(2,1fr)}}
+
+/* Infaq */
+.infaq{background:var(--daun-soft);border-block:1px solid var(--line)}
+.infaq .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+.infaq .lead{color:var(--muted);max-width:54ch;margin-top:10px}
+.rek{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.rek .r{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.rek .r > div{min-width:0}
+.rek span{font-size:.84rem;color:var(--muted);display:block}
+.rek b{font-size:1.12rem;font-variant-numeric:tabular-nums;font-weight:500}
+.rek button{background:transparent;border:1px solid var(--sogan);color:var(--sogan);border-radius:999px;padding:6px 16px;font:500 .85rem var(--f-body);cursor:pointer;min-height:36px}
+.ayat{font-family:var(--f-arab);font-size:1.5rem;direction:rtl;color:var(--sogan);margin-top:22px;line-height:1.8}
+.ayat-ref{font-size:.84rem;color:var(--muted)}
+.qris{width:260px;max-width:100%;aspect-ratio:1;margin:0 auto;border:2px dashed var(--daun);border-radius:18px;display:grid;place-items:center;text-align:center;padding:16px;color:var(--daun);background:var(--surface);overflow:hidden}
+.qris img{width:100%;height:100%;object-fit:contain}
+.qris-wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+@media (max-width:820px){.infaq .grid{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px}
+.info{display:flex;flex-direction:column;gap:18px}
+.info .row span{display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--daun);font-weight:600}
+.info .row p{margin-top:4px}
+form{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+form .full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:6px;font-size:.88rem;font-weight:500}
+input,select,textarea{font:400 1rem var(--f-body);padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+#formMsg{font-size:.92rem;color:var(--daun);font-weight:500}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+@media (max-width:480px){form{grid-template-columns:1fr}}
+
+footer{background:var(--sogan-2);color:var(--on-sogan);padding-block:44px 28px;font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px}
+footer .fl{display:flex;gap:16px;align-items:center;max-width:52ch}
+footer .fl svg{width:76px;height:auto;flex:none}
+footer p{opacity:.85}
+footer .copy{flex-basis:100%;border-top:1px solid rgba(251,243,230,.18);padding-top:16px;opacity:.65;font-size:.82rem}
+
+/* Edit mode */
+.edit-bar{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end;max-width:calc(100% - 32px)}
+.edit-bar button{font:500 .92rem var(--f-body);border-radius:999px;padding:11px 18px;cursor:pointer;border:1px solid var(--sogan);background:var(--surface);color:var(--sogan);box-shadow:0 8px 24px -10px rgba(0,0,0,.35);min-height:44px}
+.edit-bar button.primary{background:var(--sogan-2);color:var(--on-sogan);border-color:var(--sogan-2)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:21;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:.92rem;max-width:calc(100% - 32px);text-align:center}
+.edit-hint{position:sticky;top:calc(env(safe-area-inset-top,0px) + 61px);z-index:8;background:var(--kunyit-soft);color:var(--sogan);font-size:.9rem;text-align:center;padding:8px 16px;border-bottom:1px solid var(--line)}
+body.editing [data-k]{outline:1.5px dashed color-mix(in srgb,var(--kunyit) 70%,transparent);outline-offset:3px;border-radius:4px;cursor:text;min-width:2ch;display:inline-block}
+body.editing p[data-k],body.editing h1 [data-k],body.editing h3[data-k],body.editing h2[data-k]{display:block}
+body.editing [data-k]:focus{outline:2px solid var(--kunyit);background:color-mix(in srgb,var(--kunyit) 8%,transparent)}
+body.editing .chip:empty,body.editing [data-k]:empty{display:inline-block;min-height:1.4em}
+body.editing [data-k]:empty::before{content:"(kosong, ketik di sini)";color:var(--muted);font-style:italic;font-size:.85rem}
+.ed{display:none}
+body.editing .ed{display:inline-flex}
+.ed-btn{font:500 .82rem var(--f-body);border-radius:999px;padding:6px 14px;cursor:pointer;border:1px dashed var(--kunyit);background:var(--surface);color:var(--sogan);align-items:center;gap:6px;min-height:36px}
+.ed-del{align-self:flex-start;border-color:#b35a3c;color:#a3462a}
+.ed-row{margin-top:14px}
+</style>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#beranda" aria-label="Masjid Darussalam, ke beranda">
+      <svg viewBox="90 40 460 380" aria-hidden="true">
+        <rect x="311" y="45" width="18" height="18" fill="var(--logo-a)" transform="rotate(45 320 54)"></rect>
+        <path d="M320 64 L320 88" stroke="var(--logo-a)" stroke-width="8" stroke-linecap="round"></path>
+        <polygon points="320,84 288,128 352,128" fill="var(--logo-u)"></polygon>
+        <polygon points="298,138 342,138 440,250 200,250" fill="var(--logo-u)"></polygon>
+        <path d="M261 180 L379 180" stroke="var(--logo-bg)" stroke-width="7"></path>
+        <path d="M231 215 L409 215" stroke="var(--logo-bg)" stroke-width="7"></path>
+        <polygon points="170,262 470,262 549,350 91,350" fill="var(--logo-u)"></polygon>
+        <path d="M298 412 V386 A22 22 0 0 1 342 386 V412" fill="var(--logo-a)"></path>
+        <path d="M120 412 L520 412" stroke="var(--logo-u)" stroke-width="11" stroke-linecap="round"></path>
+      </svg>
+      <span><b data-k="identitas.nama">Masjid Darussalam</b><small data-k="identitas.sub">Manisrejo · Maguwoharjo</small></span>
+    </a>
+    <button id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav">
+      <a href="#sholat">Waktu Sholat</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#kajian">Kajian</a>
+      <a href="#kabar">Kabar</a>
+      <a href="#mimbar">Mimbar Jumat</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kontak">Kontak</a>
+      <a href="#infaq" class="btn btn-kunyit">Infaq</a>
+    </nav>
+  </div>
+</header>
+<div class="edit-hint" id="editHint" hidden>Mode edit: klik tulisan bergaris putus-putus untuk mengubahnya, lalu tekan <b>Simpan</b>.</div>
+
+<main id="isi">
+<section class="hero" id="beranda">
+  <div class="wrap">
+    <div>
+      <p class="salam" lang="ar">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+      <h1><span data-k="identitas.nama">Masjid Darussalam</span><span class="tag" data-k="identitas.tagline"></span></h1>
+      <p class="intro" data-k="identitas.intro"></p>
+      <div class="ctas">
+        <a class="btn btn-kunyit" href="#sholat">Lihat waktu sholat</a>
+        <a class="btn btn-line" href="#layanan">Layanan jamaah</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <div class="disc">
+        <svg viewBox="80 30 480 530" role="img" aria-label="Logo Masjid Darussalam Manisrejo">
+          <rect x="313" y="47" width="14" height="14" fill="var(--logo-a)" transform="rotate(45 320 54)"></rect>
+          <path d="M320 64 L320 88" stroke="var(--logo-a)" stroke-width="5" stroke-linecap="round"></path>
+          <polygon points="320,86 290,128 350,128" fill="var(--logo-u)"></polygon>
+          <polygon points="298,138 342,138 440,250 200,250" fill="var(--logo-u)"></polygon>
+          <path d="M261 180 L379 180" stroke="var(--logo-bg)" stroke-width="3"></path>
+          <path d="M231 215 L409 215" stroke="var(--logo-bg)" stroke-width="3"></path>
+          <polygon points="170,262 470,262 540,340 100,340" fill="var(--logo-u)"></polygon>
+          <text x="320" y="318" text-anchor="middle" font-family="'Aref Ruqaa', 'Amiri', serif" font-weight="700" font-size="50" fill="var(--logo-bg)">دار السلام</text>
+          <path d="M158 410 V378 A22 22 0 0 1 202 378 V410" fill="none" stroke="var(--logo-u)" stroke-width="5"></path>
+          <path d="M228 410 V378 A22 22 0 0 1 272 378 V410" fill="none" stroke="var(--logo-u)" stroke-width="5"></path>
+          <path d="M298 410 V378 A22 22 0 0 1 342 378 V410" fill="var(--logo-a)" stroke="var(--logo-u)" stroke-width="5"></path>
+          <path d="M368 410 V378 A22 22 0 0 1 412 378 V410" fill="none" stroke="var(--logo-u)" stroke-width="5"></path>
+          <path d="M438 410 V378 A22 22 0 0 1 482 378 V410" fill="none" stroke="var(--logo-u)" stroke-width="5"></path>
+          <path d="M120 410 L520 410" stroke="var(--logo-u)" stroke-width="7" stroke-linecap="round"></path>
+          <text x="320" y="500" text-anchor="middle" font-family="'Jost', 'Segoe UI', sans-serif" font-weight="500" font-size="30" letter-spacing="7" fill="var(--logo-u)">MASJID DARUSSALAM</text>
+          <text x="320" y="536" text-anchor="middle" font-family="'Jost', 'Segoe UI', sans-serif" font-weight="400" font-size="15" letter-spacing="5" fill="var(--logo-u)">MANISREJO · MAGUWOHARJO</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="facts" id="facts"></div></div>
+
+<section class="sec" id="sholat">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Jadwal hari ini</p><h2>Waktu Sholat Maguwoharjo</h2></div>
+      <p class="lead" id="hariIni"></p>
+    </div>
+    <div class="prayer">
+      <div class="next" aria-live="polite">
+        <span class="label">Menuju waktu</span>
+        <span class="name" id="nextName">–</span>
+        <span class="count" id="nextCount">--:--:--</span>
+        <span class="date" id="nextAt"></span>
+      </div>
+      <div class="times" id="times"></div>
+    </div>
+    <details class="week">
+      <summary>Jadwal 7 hari ke depan</summary>
+      <div class="tbl"><table id="weekTbl"></table></div>
+    </details>
+    <p class="note">Waktu dihitung otomatis untuk koordinat Maguwoharjo dengan kriteria Kemenag RI (subuh −20°, isya −18°, ihtiyat 2 menit). Untuk kepastian, cocokkan dengan jadwal resmi Kemenag Kabupaten Sleman.</p>
+  </div>
+</section>
+
+<section class="sec alt" id="layanan">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Untuk jamaah dan warga</p><h2>Layanan Masjid</h2></div>
+      <p class="lead">Ajukan lewat formulir di bagian Kontak atau langsung ke pengurus DKM selepas sholat berjamaah.</p>
+    </div>
+    <div class="svc" id="svc"></div>
+    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="layanan">+ Tambah layanan</button></div>
+  </div>
+</section>
+
+<section class="sec" id="kajian">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Majelis ilmu rutin</p><h2>Jadwal Kajian</h2></div>
+      <span class="chip" data-k="kajianCatatan"></span>
+    </div>
+    <div class="kajian" id="kajianList"></div>
+    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="kajian">+ Tambah kajian</button></div>
+  </div>
+</section>
+
+<section class="sec alt" id="kabar">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Kabar masjid</p><h2>Kegiatan Terbaru</h2></div>
+      <span class="chip" data-k="beritaCatatan"></span>
+    </div>
+    <div class="news" id="news"></div>
+    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="berita">+ Tambah berita</button></div>
+  </div>
+</section>
+
+<section class="sec" id="mimbar">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Arsip khutbah</p><h2>Mimbar Jumat</h2></div>
+      <span class="chip" data-k="mimbarCatatan"></span>
+    </div>
+    <div class="mimbar" id="mimbarList"></div>
+    <div class="ed ed-row"><button type="button" class="ed-btn" data-add="mimbar">+ Tambah khutbah</button></div>
+  </div>
+</section>
+
+<section class="sec alt" id="tentang">
+  <div class="wrap about">
+    <div class="txt">
+      <p class="eyebrow">Tentang kami</p>
+      <h2 data-k="tentang.judul"></h2>
+      <p data-k="tentang.p1"></p>
+      <p data-k="tentang.p2"></p>
+      <div class="pengurus" id="pengurus"></div>
+      <div class="ed"><button type="button" class="ed-btn" data-add="pengurus">+ Tambah pengurus</button></div>
+    </div>
+    <div class="vm">
+      <div class="box"><h3>Visi</h3><p data-k="tentang.visi"></p></div>
+      <div class="box"><h3>Misi</h3><ul id="misi"></ul>
+        <div class="ed ed-row"><button type="button" class="ed-btn" data-add="tentang.misi">+ Tambah misi</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec infaq" id="infaq">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Infaq & sedekah</p>
+      <h2 data-k="infaq.judul"></h2>
+      <p class="lead" data-k="infaq.lead"></p>
+      <div class="rek">
+        <div class="r"><div><span data-k="infaq.bank"></span><b id="rek1" data-k="infaq.rek"></b></div><button type="button" data-copy="rek1">Salin</button></div>
+        <div class="r"><div><span>Konfirmasi via WhatsApp bendahara</span><b id="wa1" data-k="infaq.wa"></b></div><button type="button" data-copy="wa1">Salin</button></div>
+      </div>
+      <p class="ayat" lang="ar">مَثَلُ الَّذِينَ يُنْفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللهِ كَمَثَلِ حَبَّةٍ أَنْبَتَتْ سَبْعَ سَنَابِلَ</p>
+      <p class="ayat-ref">QS. Al-Baqarah: 261</p>
+    </div>
+    <div class="qris-wrap">
+      <div class="qris" id="qris">QRIS DKM belum dipasang</div>
+      <div class="ed" style="flex-wrap:wrap;gap:8px;justify-content:center">
+        <label class="ed-btn" for="qrisFile" style="flex-direction:row">Unggah gambar QRIS</label>
+        <input type="file" id="qrisFile" accept="image/*" hidden>
+        <button type="button" class="ed-btn ed-del" id="qrisDel">Hapus QRIS</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kontak">
+  <div class="wrap contact">
+    <div class="info">
+      <div><p class="eyebrow">Hubungi pengurus</p><h2>Mari bersilaturahmi</h2></div>
+      <div class="row"><span>Alamat</span><p data-k="kontak.alamat"></p></div>
+      <div class="row"><span>WhatsApp sekretariat</span><p data-k="kontak.wa"></p></div>
+      <div class="row"><span>Email</span><p data-k="kontak.email"></p></div>
+      <div class="row"><span>Kantor sekretariat</span><p data-k="kontak.jam"></p></div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-kunyit" id="waLink" href="https://wa.me/" target="_blank" rel="noopener">Chat WhatsApp</a><a class="btn btn-line" href="https://www.google.com/maps/search/Masjid+Darussalam+Manisrejo+Maguwoharjo" target="_blank" rel="noopener">Buka di Google Maps</a></div>
+    </div>
+    <form id="kontakForm" novalidate>
+      <label class="" for="fNama">Nama lengkap<input id="fNama" autocomplete="name"></label>
+      <label for="fWa">Nomor WhatsApp<input id="fWa" inputmode="tel" autocomplete="tel"></label>
+      <label class="full" for="fSubjek">Keperluan<select id="fSubjek"></select></label>
+      <label class="full" for="fPesan">Pesan<textarea id="fPesan"></textarea></label>
+      <div class="full" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <button class="btn btn-kunyit" type="submit">Siapkan pesan</button>
+        <span id="formMsg" role="status"></span><a id="formWa" class="btn btn-line" href="https://wa.me/" target="_blank" rel="noopener" hidden>Kirim lewat WhatsApp</a>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <svg viewBox="90 40 460 380" aria-hidden="true">
+        <rect x="311" y="45" width="18" height="18" fill="#e9b765" transform="rotate(45 320 54)"></rect>
+        <path d="M320 64 L320 88" stroke="#e9b765" stroke-width="8" stroke-linecap="round"></path>
+        <polygon points="320,84 288,128 352,128" fill="#fbf3e6"></polygon>
+        <polygon points="298,138 342,138 440,250 200,250" fill="#fbf3e6"></polygon>
+        <polygon points="170,262 470,262 549,350 91,350" fill="#fbf3e6"></polygon>
+        <text x="320" y="327" text-anchor="middle" font-family="'Aref Ruqaa', 'Amiri', serif" font-weight="700" font-size="62" fill="var(--sogan-2)">دار السلام</text>
+        <path d="M298 412 V386 A22 22 0 0 1 342 386 V412" fill="#e9b765"></path>
+        <path d="M120 412 L520 412" stroke="#fbf3e6" stroke-width="11" stroke-linecap="round"></path>
+      </svg>
+      <p>Dewan Kemakmuran Masjid Darussalam Manisrejo. Merawat rumah Allah, merawat persaudaraan warga.</p>
+    </div>
+    <div>
+      <p><b>Ikuti kami</b></p>
+      <p data-k="sosmed"></p>
+    </div>
+    <p class="copy">© 2026 DKM Masjid Darussalam Manisrejo</p>
+  </div>
+</footer>
+
+<div class="edit-bar" id="editBar" hidden>
+  <button type="button" id="btnBatal" hidden>Batal</button>
+  <button type="button" id="btnSimpan" class="primary" hidden>Simpan</button>
+  <button type="button" id="btnEdit" class="primary">Edit halaman</button>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script type="application/json" id="isiAwal">{
+  "identitas": {
+    "nama": "Masjid Darussalam",
+    "sub": "Manisrejo · Maguwoharjo",
+    "tagline": "Rumah ibadah dan rumah persaudaraan warga Manisrejo",
+    "intro": "Masjid Darussalam berdiri di tengah Kampung Manisrejo, Kalurahan Maguwoharjo. Beratap tajug bersusun meneladani Masjid Agung Demak, masjid ini terbuka untuk sholat berjamaah, belajar Al-Qur'an, dan saling menguatkan sesama tetangga."
+  },
+  "fakta": [
+    {
+      "b": "5 waktu",
+      "s": "Sholat berjamaah setiap hari"
+    },
+    {
+      "b": "Tajug",
+      "s": "Atap bersusun meneladani Demak"
+    },
+    {
+      "b": "RW 39",
+      "s": "Kampung Manisrejo, Maguwoharjo"
+    },
+    {
+      "b": "DKM",
+      "s": "Dewan Kemakmuran Masjid Darussalam"
+    }
+  ],
+  "layanan": [
+    {
+      "judul": "Peminjaman Serambi",
+      "isi": "Untuk pengajian, syukuran, rapat warga, dan kegiatan sosial keagamaan."
+    },
+    {
+      "judul": "Akad Nikah",
+      "isi": "Pelaksanaan akad nikah di masjid, berkoordinasi dengan KUA Kecamatan Depok."
+    },
+    {
+      "judul": "Zakat, Infaq & Qurban",
+      "isi": "Penerimaan dan penyaluran zakat fitrah, zakat mal, infaq, dan hewan qurban secara amanah."
+    },
+    {
+      "judul": "TPA Anak",
+      "isi": "Belajar membaca Al-Qur'an, doa harian, dan praktik ibadah untuk anak-anak kampung."
+    },
+    {
+      "judul": "Konsultasi Keagamaan",
+      "isi": "Tanya jawab seputar ibadah dan muamalah bersama ustadz pengasuh kajian."
+    },
+    {
+      "judul": "Layanan Kedukaan",
+      "isi": "Pengumuman lelayu, perlengkapan pemulasaraan jenazah, dan sholat jenazah."
+    }
+  ],
+  "kajianCatatan": "Contoh, ganti dengan jadwal asli",
+  "kajian": [
+    {
+      "hari": "Ahad",
+      "waktu": "Ba'da Subuh",
+      "judul": "Kajian Kitab Riyadhus Shalihin",
+      "isi": "Bab adab dan akhlak sehari-hari. Terbuka untuk umum."
+    },
+    {
+      "hari": "Senin–Jumat",
+      "waktu": "15.30–17.00",
+      "judul": "TPA Anak",
+      "isi": "Iqro', tahsin, hafalan surat pendek, dan doa harian."
+    },
+    {
+      "hari": "Kamis",
+      "waktu": "Ba'da Maghrib",
+      "judul": "Yasinan & Tahlil Bapak-bapak",
+      "isi": "Dilanjutkan tausiyah singkat dan musyawarah warga."
+    },
+    {
+      "hari": "Jumat",
+      "waktu": "Pekan ke-2",
+      "judul": "Pengajian Ibu-ibu",
+      "isi": "Fiqih keluarga dan tanya jawab, di serambi masjid."
+    }
+  ],
+  "beritaCatatan": "Contoh berita",
+  "berita": [
+    {
+      "kategori": "Kegiatan",
+      "tanggal": "Oktober 2026",
+      "judul": "Logo baru Masjid Darussalam mulai diperkenalkan",
+      "isi": "DKM memperkenalkan logo baru yang memadukan siluet atap tajug dan kaligrafi Darussalam, untuk papan nama, stempel, surat, dan media sosial masjid."
+    },
+    {
+      "kategori": "Laporan",
+      "tanggal": "2026",
+      "judul": "Laporan kepengurusan 2021–2026 disampaikan kepada jamaah",
+      "isi": ""
+    },
+    {
+      "kategori": "Kelembagaan",
+      "tanggal": "2026",
+      "judul": "Takmir kini bernama Dewan Kemakmuran Masjid (DKM) Darussalam",
+      "isi": ""
+    },
+    {
+      "kategori": "Sosial",
+      "tanggal": "Setiap Jumat",
+      "judul": "Jumat Berkah: berbagi makanan selepas sholat Jumat",
+      "isi": ""
+    },
+    {
+      "kategori": "Pendidikan",
+      "tanggal": "2026",
+      "judul": "Wisuda santri TPA angkatan baru",
+      "isi": ""
+    }
+  ],
+  "mimbarCatatan": "Contoh, isi dengan tema dan khatib asli",
+  "mimbar": [
+    {
+      "tanggal": "Jumat, 16 Oktober 2026",
+      "judul": "Menjaga lisan di era media sosial",
+      "khatib": "[nama khatib]"
+    },
+    {
+      "tanggal": "Jumat, 9 Oktober 2026",
+      "judul": "Memakmurkan masjid, memakmurkan kampung",
+      "khatib": "[nama khatib]"
+    },
+    {
+      "tanggal": "Jumat, 2 Oktober 2026",
+      "judul": "Birrul walidain sebagai jalan surga",
+      "khatib": "[nama khatib]"
+    },
+    {
+      "tanggal": "Jumat, 25 September 2026",
+      "judul": "Syukur nikmat dan menjaga lingkungan",
+      "khatib": "[nama khatib]"
+    }
+  ],
+  "tentang": {
+    "judul": "Darussalam, negeri keselamatan",
+    "p1": "Masjid Darussalam berdiri di tengah Kampung Manisrejo, Kalurahan Maguwoharjo. Bangunannya mengikuti konsep Masjid Agung Demak dengan atap tajug bersusun, ciri masjid Jawa yang kerap dimaknai sebagai tingkatan iman, Islam, dan ihsan.",
+    "p2": "Masjid dikelola oleh Dewan Kemakmuran Masjid (DKM) Darussalam Manisrejo, yang sebelumnya bernama Takmir Masjid Darussalam. Ke depan, pengurus berencana menguatkan kelembagaan masjid dalam bentuk yayasan.",
+    "visi": "Masjid yang makmur, ramah, dan menjadi pusat ibadah serta persaudaraan warga Manisrejo.",
+    "misi": [
+      "Menyelenggarakan sholat berjamaah dan ibadah dengan tertib.",
+      "Mendidik generasi muda melalui TPA dan kajian rutin.",
+      "Mengelola dana umat secara amanah dan terbuka.",
+      "Menjadi tempat warga saling peduli dalam suka dan duka."
+    ]
+  },
+  "pengurus": [
+    {
+      "jabatan": "Ketua DKM",
+      "nama": "Fendi Utomo"
+    },
+    {
+      "jabatan": "Sekretaris",
+      "nama": "[nama]"
+    },
+    {
+      "jabatan": "Bendahara",
+      "nama": "[nama]"
+    }
+  ],
+  "infaq": {
+    "judul": "Ikut memakmurkan masjid",
+    "lead": "Infaq jamaah dipakai untuk operasional, kebersihan, listrik, TPA, dan kegiatan sosial. Laporan keuangan diumumkan rutin kepada jamaah.",
+    "bank": "Bank [nama bank] · a.n. DKM Darussalam Manisrejo",
+    "rek": "[nomor rekening]",
+    "wa": "[nomor WA bendahara]",
+    "qris": ""
+  },
+  "kontak": {
+    "alamat": "Masjid Darussalam, Kampung Manisrejo RW 39, Kalurahan Maguwoharjo, Kapanewon Depok, Kabupaten Sleman, D.I. Yogyakarta",
+    "wa": "0895-3997-73837",
+    "email": "[email masjid]",
+    "jam": "Selepas sholat Isya, atau dengan janji terlebih dahulu"
+  },
+  "sosmed": "Instagram · YouTube · Facebook: [tautkan akun masjid]"
+}</script>
+<script>
+(function(){
+  var DEF=JSON.parse(document.getElementById('isiAwal').textContent);
+  var S=JSON.parse(JSON.stringify(DEF));
+  var editing=false;
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function get(o,p){return p.split('.').reduce(function(a,k){return a==null?a:a[k]},o)}
+  function set(o,p,v){var ks=p.split('.'),l=ks.pop(),t=ks.reduce(function(a,k){return a[k]},o);t[l]=v}
+  function f(p,tag,cls){return '<'+tag+(cls?' class="'+cls+'"':'')+' data-k="'+p+'">'+esc(get(S,p))+'</'+tag+'>'}
+  function waNum(){var n=String(get(S,'kontak.wa')||'').replace(/\D/g,'');if(n.charAt(0)==='0')n='62'+n.slice(1);return n.length>=9?n:''}
+  function del(list,i){return '<button type="button" class="ed ed-btn ed-del" data-del="'+list+'" data-i="'+i+'">Hapus</button>'}
+
+  var ICONS=[
+    '<path d="M5 21V10l7-5 7 5v11"/><path d="M10 21v-5h4v5"/><path d="M3 21h18"/>',
+    '<circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/>',
+    '<path d="M4 11h16v9H4z"/><path d="M12 11v9M3 7h18v4H3z"/><path d="M12 7c-2-4-6-4-6-1.5S12 7 12 7s6 1 6-1.5S14 3 12 7"/>',
+    '<path d="M12 6c-2.5-2-6-2-8.5-.5v14c2.5-1.5 6-1.5 8.5.5 2.5-2 6-2 8.5-.5v-14C18 4 14.5 4 12 6z"/><path d="M12 6v14"/>',
+    '<path d="M4 17V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H9l-5 4z"/><path d="M9 9h6M9 12h4"/>',
+    '<path d="M12 4v16M6 9h12"/><path d="M8 20h8"/>'
+  ];
+  var SUBJ=['Peminjaman Serambi','Akad Nikah','Zakat, Infaq & Qurban','TPA Anak','Konsultasi Keagamaan','Layanan Kedukaan'];
+
+  function render(){
+    document.querySelectorAll('[data-k]').forEach(function(el){
+      if(el.closest('#facts,#svc,#kajianList,#news,#mimbarList,#pengurus,#misi'))return;
+      el.textContent=get(S,el.dataset.k)||'';
+    });
+    document.getElementById('facts').innerHTML=S.fakta.map(function(x,i){return '<div>'+f('fakta.'+i+'.b','b')+f('fakta.'+i+'.s','span')+'</div>'}).join('');
+    document.getElementById('svc').innerHTML=S.layanan.map(function(x,i){
+      return '<article><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICONS[i%ICONS.length]+'</svg></span>'+
+      f('layanan.'+i+'.judul','h3')+f('layanan.'+i+'.isi','p')+
+      '<a class="go" href="#kontak" data-subjek="'+esc(x.judul)+'">Hubungi pengurus →</a>'+del('layanan',i)+'</article>'}).join('');
+    document.getElementById('kajianList').innerHTML=S.kajian.map(function(x,i){
+      return '<div class="kj"><div class="day">'+f('kajian.'+i+'.hari','b')+f('kajian.'+i+'.waktu','span')+'</div><div>'+
+      f('kajian.'+i+'.judul','h3')+f('kajian.'+i+'.isi','p')+del('kajian',i)+'</div></div>'}).join('');
+    var b=S.berita,h='';
+    if(b.length){
+      h+='<article class="feat"><div class="thumb"><svg viewBox="90 40 460 380" aria-hidden="true"><polygon points="320,84 288,128 352,128" fill="#e9b765"/><polygon points="298,138 342,138 440,250 200,250" fill="#e9b765"/><polygon points="170,262 470,262 549,350 91,350" fill="#e9b765"/><path d="M120 412 L520 412" stroke="#e9b765" stroke-width="11" stroke-linecap="round"/></svg></div><div class="body"><span class="meta">'+
+        f('berita.0.kategori','span')+' · '+f('berita.0.tanggal','span')+'</span>'+f('berita.0.judul','h3')+f('berita.0.isi','p')+del('berita',0)+'</div></article>';
+      h+='<div class="list">'+b.slice(1).map(function(x,j){var i=j+1;
+        return '<div class="it"><span class="meta">'+f('berita.'+i+'.kategori','span')+' · '+f('berita.'+i+'.tanggal','span')+'</span>'+f('berita.'+i+'.judul','h3')+del('berita',i)+'</div>'}).join('')+'</div>';
+    }
+    document.getElementById('news').innerHTML=h;
+    document.getElementById('mimbarList').innerHTML=S.mimbar.map(function(x,i){
+      return '<article class="mb">'+f('mimbar.'+i+'.tanggal','span','tgl')+f('mimbar.'+i+'.judul','h3')+
+      '<span class="khatib">Khatib: '+f('mimbar.'+i+'.khatib','span')+'</span>'+del('mimbar',i)+'</article>'}).join('');
+    document.getElementById('pengurus').innerHTML=S.pengurus.map(function(x,i){
+      return '<div class="p">'+f('pengurus.'+i+'.jabatan','span')+f('pengurus.'+i+'.nama','b')+del('pengurus',i)+'</div>'}).join('');
+    document.getElementById('misi').innerHTML=S.tentang.misi.map(function(x,i){
+      return '<li>'+f('tentang.misi.'+i,'span')+' '+del('tentang.misi',i)+'</li>'}).join('');
+    var wl=document.getElementById('waLink'),wn=waNum();wl.href='https://wa.me/'+wn;wl.hidden=!wn;
+    var q=document.getElementById('qris');
+    q.innerHTML=S.infaq.qris?'<img alt="QRIS infaq DKM Masjid Darussalam" src="'+esc(S.infaq.qris)+'">':'QRIS DKM belum dipasang';
+    var sel=document.getElementById('fSubjek'),cur=sel.value;
+    sel.innerHTML=S.layanan.map(function(x){return '<option>'+esc(x.judul)+'</option>'}).join('')+'<option>Saran & masukan</option><option>Lainnya</option>';
+    if(cur)sel.value=cur;
+    if(editing)setEditable(true);
+  }
+
+  // Menu
+  var mb=document.getElementById('menuBtn'),nav=document.getElementById('mainNav');
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+
+  // Prayer times, Kemenag criteria, Maguwoharjo
+  var LAT=-7.7756,LNG=110.4225,TZ=7,rad=Math.PI/180,deg=180/Math.PI;
+  function fix(a,b){a=a-b*Math.floor(a/b);return a<0?a+b:a}
+  function sun(jd){var D=jd-2451545,g=fix(357.529+0.98560028*D,360),q=fix(280.459+0.98564736*D,360),
+    L=fix(q+1.915*Math.sin(g*rad)+0.020*Math.sin(2*g*rad),360),e=23.439-0.00000036*D,
+    RA=Math.atan2(Math.cos(e*rad)*Math.sin(L*rad),Math.cos(L*rad))*deg/15,
+    dec=Math.asin(Math.sin(e*rad)*Math.sin(L*rad))*deg,eqt=q/15-fix(RA,24);
+    if(eqt>12)eqt-=24;if(eqt<-12)eqt+=24;return{dec:dec,eqt:eqt}}
+  function ha(alt,dec){var v=(Math.sin(alt*rad)-Math.sin(LAT*rad)*Math.sin(dec*rad))/(Math.cos(LAT*rad)*Math.cos(dec*rad));
+    return Math.acos(Math.max(-1,Math.min(1,v)))*deg/15}
+  function times(y,m,d){
+    var jd=Date.UTC(y,m,d,12-TZ)/864e5+2440587.5,s=sun(jd),dz=12+TZ-LNG/15-s.eqt,
+      asrAlt=Math.atan(1/(1+Math.tan(Math.abs(LAT-s.dec)*rad)))*deg,ih=2/60,subuh=dz-ha(-20,s.dec)+ih;
+    return{Imsak:subuh-10/60,Subuh:subuh,Terbit:dz-ha(-0.833,s.dec)-ih,Dzuhur:dz+ih,Ashar:dz+ha(asrAlt,s.dec)+ih,Maghrib:dz+ha(-0.833,s.dec)+ih,Isya:dz+ha(-18,s.dec)+ih}}
+  function hm(h){var t=Math.ceil(h*60-1e-6);return String(Math.floor(t/60)%24).padStart(2,'0')+':'+String(t%60).padStart(2,'0')}
+  var HARI=['Ahad','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'],BLN=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'],
+      WAJIB=['Subuh','Dzuhur','Ashar','Maghrib','Isya'],hijri='';
+  function wib(){var n=new Date(Date.now()+TZ*36e5);return{y:n.getUTCFullYear(),m:n.getUTCMonth(),d:n.getUTCDate(),w:n.getUTCDay(),h:n.getUTCHours()+n.getUTCMinutes()/60+n.getUTCSeconds()/3600}}
+  try{hijri=new Intl.DateTimeFormat('id-ID-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Jakarta'}).format(new Date())}catch(e){}
+  function tick(){
+    var n=wib(),t=times(n.y,n.m,n.d);
+    document.getElementById('hariIni').textContent=HARI[n.w]+', '+n.d+' '+BLN[n.m]+' '+n.y+(hijri?' · '+hijri:'');
+    var next=null,nh=0,cur=null,i;
+    for(i=0;i<WAJIB.length;i++){if(t[WAJIB[i]]>n.h){next=WAJIB[i];nh=t[next];break}}
+    if(!next){var tm=new Date(Date.UTC(n.y,n.m,n.d+1));next='Subuh';nh=times(tm.getUTCFullYear(),tm.getUTCMonth(),tm.getUTCDate()).Subuh+24}
+    for(i=WAJIB.length-1;i>=0;i--){if(t[WAJIB[i]]<=n.h){cur=WAJIB[i];break}}
+    var html='';['Subuh','Terbit','Dzuhur','Ashar','Maghrib','Isya'].forEach(function(k){
+      var nm=(k==='Dzuhur'&&n.w===5)?'Jumat':k;
+      html+='<div'+(k===cur?' class="now"':'')+'><span>'+nm+(k===cur?' · sekarang':'')+'</span><b>'+hm(t[k])+'</b></div>'});
+    var box=document.getElementById('times');if(box.innerHTML!==html)box.innerHTML=html;
+    var left=Math.max(0,Math.round((nh-n.h)*3600));
+    document.getElementById('nextName').textContent=(next==='Dzuhur'&&n.w===5)?'Jumat':next;
+    document.getElementById('nextCount').textContent=[Math.floor(left/3600),Math.floor(left%3600/60),left%60].map(function(v){return String(v).padStart(2,'0')}).join(':');
+    document.getElementById('nextAt').textContent='pukul '+hm(nh%24)+' WIB · imsak '+hm(t.Imsak);
+  }
+  function week(){
+    var n=wib(),K=['Imsak','Subuh','Terbit','Dzuhur','Ashar','Maghrib','Isya'],rows='<tr><th>Tanggal</th>'+K.map(function(k){return'<th>'+k+'</th>'}).join('')+'</tr>';
+    for(var i=0;i<7;i++){var dt=new Date(Date.UTC(n.y,n.m,n.d+i)),t=times(dt.getUTCFullYear(),dt.getUTCMonth(),dt.getUTCDate());
+      rows+='<tr><td>'+HARI[dt.getUTCDay()]+', '+dt.getUTCDate()+' '+BLN[dt.getUTCMonth()].slice(0,3)+'</td>'+K.map(function(k){return'<td>'+hm(t[k])+'</td>'}).join('')+'</tr>'}
+    document.getElementById('weekTbl').innerHTML=rows}
+
+  // Prefill subject, copy buttons, contact form
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-subjek]');
+    if(a&&!editing){document.getElementById('fSubjek').value=a.dataset.subjek}
+    var c=e.target.closest('[data-copy]');
+    if(c){var el=document.getElementById(c.dataset.copy);
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Terpilih'}
+      try{navigator.clipboard.writeText(el.textContent).then(function(){c.textContent='Tersalin'},sel)}catch(err){sel()}
+      setTimeout(function(){c.textContent='Salin'},2000)}
+  });
+  document.getElementById('kontakForm').addEventListener('submit',function(e){
+    e.preventDefault();var nm=document.getElementById('fNama').value.trim(),wa=document.getElementById('fWa').value.trim(),ps=document.getElementById('fPesan').value.trim(),msg=document.getElementById('formMsg');
+    if(!nm||!wa||!ps){msg.textContent='Lengkapi nama, nomor WhatsApp, dan pesan terlebih dahulu.';return}
+    var txt="Assalamu'alaikum. Saya "+nm+' ('+wa+'), keperluan: '+document.getElementById('fSubjek').value+'. '+ps;
+    var fw=document.getElementById('formWa'),n=waNum();
+    if(n){fw.href='https://wa.me/'+n+'?text='+encodeURIComponent(txt);fw.hidden=false;msg.textContent='Pesan siap. Tekan tombol di samping untuk mengirim.';return}
+    try{navigator.clipboard.writeText(txt).then(function(){msg.textContent='Pesan tersalin. Tempelkan di WhatsApp sekretariat DKM.'},function(){msg.textContent=txt})}catch(err){msg.textContent=txt}
+  });
+
+  // ---------- Edit mode ----------
+  var bar=document.getElementById('editBar'),bEdit=document.getElementById('btnEdit'),bSave=document.getElementById('btnSimpan'),bCancel=document.getElementById('btnBatal'),
+      hint=document.getElementById('editHint'),toastEl=document.getElementById('toast'),snapshot=null,art=null,assets=null,tt;
+  function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(function(){toastEl.hidden=true},3500)}
+  function setEditable(on){
+    document.querySelectorAll('[data-k]').forEach(function(el){
+      if(on){try{el.contentEditable='plaintext-only'}catch(e){el.contentEditable='true'}if(el.contentEditable!=='plaintext-only')el.contentEditable='true';el.spellcheck=false}
+      else el.removeAttribute('contenteditable')})}
+  function collect(){document.querySelectorAll('[data-k]').forEach(function(el){set(S,el.dataset.k,el.innerText.replace(/\s+\n/g,'\n').trim())})}
+  function mode(on){
+    editing=on;document.body.classList.toggle('editing',on);hint.hidden=!on;
+    bEdit.hidden=on;bSave.hidden=!on;bCancel.hidden=!on;setEditable(on)}
+  bEdit.addEventListener('click',function(){snapshot=JSON.stringify(S);mode(true)});
+  bCancel.addEventListener('click',function(){S=JSON.parse(snapshot);mode(false);render()});
+  document.addEventListener('click',function(e){
+    if(!editing)return;
+    var a=e.target.closest('a[href]');if(a&&a.closest('#isi,footer,header .brand'))e.preventDefault();
+    var d=e.target.closest('[data-del]');
+    if(d){collect();get(S,d.dataset.del).splice(+d.dataset.i,1);render();return}
+    var ad=e.target.closest('[data-add]');
+    if(ad){collect();var list=get(S,ad.dataset.add),tpl={
+      layanan:{judul:'Layanan baru',isi:'Keterangan layanan.'},
+      kajian:{hari:'Hari',waktu:'Waktu',judul:'Judul kajian',isi:'Keterangan.'},
+      berita:{kategori:'Kegiatan',tanggal:'Tanggal',judul:'Judul berita',isi:''},
+      mimbar:{tanggal:'Jumat, tanggal',judul:'Tema khutbah',khatib:'[nama khatib]'},
+      pengurus:{jabatan:'Jabatan',nama:'[nama]'}}[ad.dataset.add];
+      if(ad.dataset.add==='berita')list.unshift(tpl);else list.push(tpl===undefined?'Misi baru.':tpl);
+      render()}
+  });
+  document.addEventListener('keydown',function(e){if(editing&&e.key==='Enter'&&e.target.matches&&e.target.matches('[data-k]')&&!e.target.matches('p'))e.preventDefault()});
+  bSave.addEventListener('click',function(){
+    if(!art){toast('Penyimpanan tidak tersedia di tampilan ini.');return}
+    collect();bSave.disabled=true;bSave.textContent='Menyimpan…';
+    art.publish({'isi.json':{content:JSON.stringify(S,null,2),contentType:'application/json'}}).then(function(){
+      mode(false);render();toast('Tersimpan. Perubahan sudah tampil untuk semua pengunjung.')
+    },function(err){
+      var c=err&&err.code;
+      if(c==='conflict')toast('Ada perubahan lain yang baru disimpan. Halaman dimuat ulang.');
+      else if(c==='not_writer'||c==='not_granted'||c==='capability_disabled'||c==='consent_required'){toast('Akun ini hanya bisa melihat, tidak bisa menyimpan.');bar.hidden=true;mode(false)}
+      else if(c==='rate_limited')toast('Terlalu sering menyimpan. Tunggu sebentar lalu coba lagi.');
+      else toast('Gagal menyimpan. Periksa koneksi lalu tekan Simpan lagi.');
+    }).then(function(){bSave.disabled=false;bSave.textContent='Simpan'});
+  });
+  document.getElementById('qrisFile').addEventListener('change',function(e){
+    var file=e.target.files&&e.target.files[0];if(!file)return;
+    if(!assets){toast('Unggah gambar tidak tersedia di tampilan ini.');return}
+    collect();toast('Mengunggah QRIS…');
+    assets.upload(file).then(function(r){S.infaq.qris=r.url;render();toast('QRIS terpasang. Tekan Simpan agar tersimpan.')},
+      function(){toast('Gagal mengunggah. Gunakan gambar JPG atau PNG di bawah 20 MB.')});
+    e.target.value='';
+  });
+  document.getElementById('qrisDel').addEventListener('click',function(){collect();S.infaq.qris='';render()});
+
+  // Boot
+  render();tick();week();setInterval(tick,1000);
+  fetch('isi.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
+    if(j&&!editing){S=j;render()}}).catch(function(){});
+  if(window.claude&&window.claude.use){
+    Promise.all([window.claude.use('artifact'),window.claude.use('user'),window.claude.use('assets')]).then(function(r){
+      art=r[0];assets=r[2];var u=r[1];
+      if(art&&u&&u.canEdit&&u.canEdit())bar.hidden=false;
+    }).catch(function(){});
+  }
+})();
+</script>

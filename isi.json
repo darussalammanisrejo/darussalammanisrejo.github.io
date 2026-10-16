@@ -1,0 +1,176 @@
+{
+  "identitas": {
+    "nama": "Masjid Darussalam",
+    "sub": "Manisrejo · Maguwoharjo",
+    "tagline": "Rumah ibadah dan rumah persaudaraan warga Manisrejo",
+    "intro": "Masjid Darussalam berdiri di tengah Kampung Manisrejo, Kalurahan Maguwoharjo. Beratap tajug bersusun meneladani Masjid Agung Demak, masjid ini terbuka untuk sholat berjamaah, belajar Al-Qur'an, dan saling menguatkan sesama tetangga."
+  },
+  "fakta": [
+    {
+      "b": "5 waktu",
+      "s": "Sholat berjamaah setiap hari"
+    },
+    {
+      "b": "Tajug",
+      "s": "Atap bersusun meneladani Demak"
+    },
+    {
+      "b": "RW 39",
+      "s": "Kampung Manisrejo, Maguwoharjo"
+    },
+    {
+      "b": "DKM",
+      "s": "Dewan Kemakmuran Masjid Darussalam"
+    }
+  ],
+  "layanan": [
+    {
+      "judul": "Peminjaman Serambi",
+      "isi": "Untuk pengajian, syukuran, rapat warga, dan kegiatan sosial keagamaan."
+    },
+    {
+      "judul": "Akad Nikah",
+      "isi": "Pelaksanaan akad nikah di masjid, berkoordinasi dengan KUA Kecamatan Depok."
+    },
+    {
+      "judul": "Zakat, Infaq & Qurban",
+      "isi": "Penerimaan dan penyaluran zakat fitrah, zakat mal, infaq, dan hewan qurban secara amanah."
+    },
+    {
+      "judul": "TPA Anak",
+      "isi": "Belajar membaca Al-Qur'an, doa harian, dan praktik ibadah untuk anak-anak kampung."
+    },
+    {
+      "judul": "Konsultasi Keagamaan",
+      "isi": "Tanya jawab seputar ibadah dan muamalah bersama ustadz pengasuh kajian."
+    },
+    {
+      "judul": "Layanan Kedukaan",
+      "isi": "Pengumuman lelayu, perlengkapan pemulasaraan jenazah, dan sholat jenazah."
+    }
+  ],
+  "kajianCatatan": "Contoh, ganti dengan jadwal asli",
+  "kajian": [
+    {
+      "hari": "Ahad",
+      "waktu": "Ba'da Subuh",
+      "judul": "Kajian Kitab Riyadhus Shalihin",
+      "isi": "Bab adab dan akhlak sehari-hari. Terbuka untuk umum."
+    },
+    {
+      "hari": "Senin–Jumat",
+      "waktu": "15.30–17.00",
+      "judul": "TPA Anak",
+      "isi": "Iqro', tahsin, hafalan surat pendek, dan doa harian."
+    },
+    {
+      "hari": "Kamis",
+      "waktu": "Ba'da Maghrib",
+      "judul": "Yasinan & Tahlil Bapak-bapak",
+      "isi": "Dilanjutkan tausiyah singkat dan musyawarah warga."
+    },
+    {
+      "hari": "Jumat",
+      "waktu": "Pekan ke-2",
+      "judul": "Pengajian Ibu-ibu",
+      "isi": "Fiqih keluarga dan tanya jawab, di serambi masjid."
+    }
+  ],
+  "beritaCatatan": "Contoh berita",
+  "berita": [
+    {
+      "kategori": "Kegiatan",
+      "tanggal": "Oktober 2026",
+      "judul": "Logo baru Masjid Darussalam mulai diperkenalkan",
+      "isi": "DKM memperkenalkan logo baru yang memadukan siluet atap tajug dan kaligrafi Darussalam, untuk papan nama, stempel, surat, dan media sosial masjid."
+    },
+    {
+      "kategori": "Laporan",
+      "tanggal": "2026",
+      "judul": "Laporan kepengurusan 2021–2026 disampaikan kepada jamaah",
+      "isi": ""
+    },
+    {
+      "kategori": "Kelembagaan",
+      "tanggal": "2026",
+      "judul": "Takmir kini bernama Dewan Kemakmuran Masjid (DKM) Darussalam",
+      "isi": ""
+    },
+    {
+      "kategori": "Sosial",
+      "tanggal": "Setiap Jumat",
+      "judul": "Jumat Berkah: berbagi makanan selepas sholat Jumat",
+      "isi": ""
+    },
+    {
+      "kategori": "Pendidikan",
+      "tanggal": "2026",
+      "judul": "Wisuda santri TPA angkatan baru",
+      "isi": ""
+    }
+  ],
+  "mimbarCatatan": "Contoh, isi dengan tema dan khatib asli",
+  "mimbar": [
+    {
+      "tanggal": "Jumat, 16 Oktober 2026",
+      "judul": "Menjaga lisan di era media sosial",
+      "khatib": "[nama khatib]"
+    },
+    {
+      "tanggal": "Jumat, 9 Oktober 2026",
+      "judul": "Memakmurkan masjid, memakmurkan kampung",
+      "khatib": "[nama khatib]"
+    },
+    {
+      "tanggal": "Jumat, 2 Oktober 2026",
+      "judul": "Birrul walidain sebagai jalan surga",
+      "khatib": "[nama khatib]"
+    },
+    {
+      "tanggal": "Jumat, 25 September 2026",
+      "judul": "Syukur nikmat dan menjaga lingkungan",
+      "khatib": "[nama khatib]"
+    }
+  ],
+  "tentang": {
+    "judul": "Darussalam, negeri keselamatan",
+    "p1": "Masjid Darussalam berdiri di tengah Kampung Manisrejo, Kalurahan Maguwoharjo. Bangunannya mengikuti konsep Masjid Agung Demak dengan atap tajug bersusun, ciri masjid Jawa yang kerap dimaknai sebagai tingkatan iman, Islam, dan ihsan.",
+    "p2": "Masjid dikelola oleh Dewan Kemakmuran Masjid (DKM) Darussalam Manisrejo, yang sebelumnya bernama Takmir Masjid Darussalam. Ke depan, pengurus berencana menguatkan kelembagaan masjid dalam bentuk yayasan.",
+    "visi": "Masjid yang makmur, ramah, dan menjadi pusat ibadah serta persaudaraan warga Manisrejo.",
+    "misi": [
+      "Menyelenggarakan sholat berjamaah dan ibadah dengan tertib.",
+      "Mendidik generasi muda melalui TPA dan kajian rutin.",
+      "Mengelola dana umat secara amanah dan terbuka.",
+      "Menjadi tempat warga saling peduli dalam suka dan duka."
+    ]
+  },
+  "pengurus": [
+    {
+      "jabatan": "Ketua DKM",
+      "nama": "Fendi Utomo"
+    },
+    {
+      "jabatan": "Sekretaris",
+      "nama": "[nama]"
+    },
+    {
+      "jabatan": "Bendahara",
+      "nama": "[nama]"
+    }
+  ],
+  "infaq": {
+    "judul": "Ikut memakmurkan masjid",
+    "lead": "Infaq jamaah dipakai untuk operasional, kebersihan, listrik, TPA, dan kegiatan sosial. Laporan keuangan diumumkan rutin kepada jamaah.",
+    "bank": "Bank [nama bank] · a.n. DKM Darussalam Manisrejo",
+    "rek": "[nomor rekening]",
+    "wa": "[nomor WA bendahara]",
+    "qris": ""
+  },
+  "kontak": {
+    "alamat": "Masjid Darussalam, Kampung Manisrejo RW 39, Kalurahan Maguwoharjo, Kapanewon Depok, Kabupaten Sleman, D.I. Yogyakarta",
+    "wa": "0895-3997-73837",
+    "email": "[email masjid]",
+    "jam": "Selepas sholat Isya, atau dengan janji terlebih dahulu"
+  },
+  "sosmed": "Instagram · YouTube · Facebook: [tautkan akun masjid]"
+}
